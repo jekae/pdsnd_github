@@ -169,6 +169,11 @@ def station_stats(df):
     df_combi = df.groupby(['Start Station','End Station'])['Start Station'].count()
     print('- With {} trips, the most frequent combination is to start at {} and to finish at {}.'.format(df_combi.max(), df_combi.idxmax()[0], df_combi.idxmax()[1]))
     
+    # display least commonly used start station
+    df_start = df.groupby(['Start Station'])['Start Station'].count()
+    print('- The least commonly used start station is {}, with a total of {}.'.format(df_start.idxmax(), df_start.min()))
+    #print(df_start)    
+    
     # time to calculate
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -185,7 +190,7 @@ def trip_duration_stats(df):
     print('- The total travel time for your choosen selection is:', convert_sec(X.sum()))
     
     # display mean travel time
-    print('- The mean travel time for your choosen selection is:', convert_sec(X.mean()))    
+    print('- The mean travel time for your choosen selection is:', convert_sec(X.mean()))  
  
     # time to calculate
     print("\nThis took %s seconds." % (time.time() - start_time))
