@@ -4,7 +4,7 @@
 
 ### Description
 
-* different analysis of bikeshare data from 3 US cities
+* Various analyzes of bikeshare data from 3 US cities (Chicago, Washington D.C., New York City)
 
 ### Files used
 
