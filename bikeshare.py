@@ -138,6 +138,10 @@ def time_stats(df):
     # display the most common start hour
     df_hour = df.groupby(df['Start Time'].dt.hour)['Start Time'].count()
     print('- The most common start hour for trips is {}, with a total of {}.'.format(df_hour.idxmax(), df_hour.max()))
+    
+    # display the most common start minute
+    df_minute = df.groupby(df['Start Time'].dt.minute)['Start Time'].count()
+    print('- The most common start minute for trips is {}, with a total of {}.'.format(df_hour.idxmax(), df_minute.max()))    
 
     
     # time to calculate
